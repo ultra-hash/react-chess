@@ -8,14 +8,30 @@
 }
 
 .board-square {
-  width: 50px;
-  height: 50px;
+  box-sizing: border-box;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px;
+  font-weight: 700;
 }
 
 .black {
   background-color: #7d945d;
+  color: #eeeed5;
 }
 
 .white {
   background-color: #eeeed5;
+  color: #7d945d;
+}
+
+.top-left {
+  align-self: flex-start;
+}
+
+.bottom-right {
+  align-self: flex-end;
 }
