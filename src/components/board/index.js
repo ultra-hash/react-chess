@@ -1,350 +1,38 @@
 import { Component } from "react";
 import "./index.css"
 
-class Board extends Component {
-    state = {}
+const rows = [8, 7, 6, 5, 4, 3, 2, 1]
+const columns = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
 
-    render() {
+class Board extends Component {
+    state = { rows, columns }
+
+    generateBoard() {
+        const { rows, columns } = this.state
         return (
             <div className="board">
-                <div className="board-row">
-                    <div className="board-square white">
-                        <div className="top-left">8</div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-                <div className="board-row">
-                    <div className="board-square black">
-                        <div className="top-left">7</div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-                <div className="board-row">
-                    <div className="board-square white">
-                        <div className="top-left">6</div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-                <div className="board-row">
-                    <div className="board-square black">
-                        <div className="top-left">5</div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-                <div className="board-row">
-                    <div className="board-square white">
-                        <div className="top-left">4</div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-                <div className="board-row">
-                    <div className="board-square black">
-                        <div className="top-left">3</div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-                <div className="board-row">
-                    <div className="board-square white">
-                        <div className="top-left">2</div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-                <div className="board-row">
-                    <div className="board-square black">
-                        <div className="top-left">1</div>
-                        <div></div>
-                        <div className="bottom-right">a</div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div className="bottom-right">b</div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div className="bottom-right">c</div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div className="bottom-right">d</div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div className="bottom-right">e</div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div className="bottom-right">f</div>
-                    </div>
-                    <div className="board-square black">
-                        <div></div>
-                        <div></div>
-                        <div className="bottom-right">g</div>
-                    </div>
-                    <div className="board-square white">
-                        <div></div>
-                        <div></div>
-                        <div className="bottom-right">h</div>
-                    </div>
-                </div>
+                {
+                    rows.map((row, rowIndex) => (<div className="board-row" key={row}>
+                        {
+                            columns.map((column, columnIndex) => {
+                                let squareColor = (rowIndex + columnIndex) % 2 === 0 ? 'white-square' : 'black-square'
+                                let showRowIndicator = column === 'a'
+                                let showColumnIndicator = row === 1
+                                return (<div className={`board-square ${squareColor}`} key={column}>
+                                    <div className={showRowIndicator ? 'top-left' : ''}>{showRowIndicator && row}</div>
+                                    <div>{ }</div>
+                                    <div className={showColumnIndicator ? 'bottom-right' : ''}>{showColumnIndicator && column}</div>
+                                </div>)
+                            })
+                        }
+                    </div>))
+                }
             </div>
         )
+    }
+
+    render() {
+        return this.generateBoard()
     }
 }
 export default Board

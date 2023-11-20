@@ -18,12 +18,12 @@
   font-weight: 700;
 }
 
-.black {
+.black-square {
   background-color: #7d945d;
   color: #eeeed5;
 }
 
-.white {
+.white-square {
   background-color: #eeeed5;
   color: #7d945d;
 }
