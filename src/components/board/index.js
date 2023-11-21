@@ -9,13 +9,9 @@ const squareIdAndValueMap = {}
 for (let row of rows) {
     for (let column of columns) {
         squareIdAndValueMap[`${column}${row}`] = {
-            id: column + row,
-            value: {
-                id: '',
-                location: column + row,
-                type: '',
-                jsx: ''
-            }
+            id: '',
+            location: column + row,
+            type: '',
         }
     }
 }
@@ -216,8 +212,29 @@ for (let piece of blacks.special) {
 
 
 class Board extends Component {
-    state = { rows, columns, squareIdAndValueMap }
+    state = { rows, columns, squareIdAndValueMap, activePiece: '' }
 
+
+    onClickSquare(id) {
+        const { activePiece } = this.state
+        const piece = squareIdAndValueMap[id]
+
+        if (activePiece) {
+            // if activeplece exits move active piece to the current selected square
+            squareIdAndValueMap[id] = activePiece
+            squareIdAndValueMap[activePiece.location] = {
+                id: '',
+                location: activePiece.location,
+                type: '',
+            }
+            this.setState({ activePiece: '' })
+        } else if (piece.type) {
+            this.setState({ activePiece: piece })
+        } else {
+            this.setState({ activePiece: '' })
+        }
+        console.log(piece)
+    }
 
     loadIcon(id) {
         const object = squareIdAndValueMap[id]
@@ -256,7 +273,7 @@ class Board extends Component {
     }
 
     generateBoard() {
-        const { rows, columns } = this.state
+        const { rows, columns, activePiece } = this.state
         return (
             <div className="board">
                 {
@@ -266,11 +283,15 @@ class Board extends Component {
                                 let squareColor = (rowIndex + columnIndex) % 2 === 0 ? 'white-square' : 'black-square'
                                 let showRowIndicator = column === 'a'
                                 let showColumnIndicator = row === 1
-                                return (<div className={`board-square ${squareColor}`} key={column} id={column + row}>
-                                    <div className={showRowIndicator ? 'top-left' : ''}>{showRowIndicator && row}</div>
-                                    <div className="center-center">{this.loadIcon(column + row)}</div>
-                                    <div className={showColumnIndicator ? 'bottom-right' : ''}>{showColumnIndicator && column}</div>
-                                </div>)
+                                return (
+                                    <div className={`board-square ${squareColor} ${activePiece.location === column + row ? 'active-piece' : ''}`}
+                                        key={column} id={column + row}
+                                        onClick={() => this.onClickSquare(column + row)}
+                                    >
+                                        <div className={showRowIndicator ? 'top-left' : ''}>{showRowIndicator && row}</div>
+                                        <div className="center-center">{this.loadIcon(column + row)}</div>
+                                        <div className={showColumnIndicator ? 'bottom-right' : ''}>{showColumnIndicator && column}</div>
+                                    </div>)
                             })
                         }
                     </div>))
