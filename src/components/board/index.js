@@ -298,6 +298,7 @@ class Board extends Component {
                                     <div className={`board-square ${squareColor} ${activePiece.location === column + row ? 'active-piece' : ''}`}
                                         key={column} id={column + row}
                                         onClick={() => this.onClickSquare(column + row)}
+                                        onKeyUp={() => { }} // fix for sonarlint problem 
                                     >
                                         <div className={showRowIndicator ? 'top-left' : ''}>{showRowIndicator && row}</div>
                                         <div className="center-center">{this.loadIcon(column + row)}</div>
