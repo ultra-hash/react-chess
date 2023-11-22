@@ -222,17 +222,20 @@ class Board extends Component {
         if (activePiece) {
             // if activeplece exits move active piece to the current selected squares
 
-            // updating piece to current location
-            squareIdAndValueMap[id] = activePiece
+            if (activePiece !== piece && activePiece.color !== piece.color) {
 
-            // removing piece from previouly active location
-            squareIdAndValueMap[activePiece.location] = {
-                id: '',
-                location: activePiece.location,
-                type: '',
+                // updating piece to current location
+                squareIdAndValueMap[id] = activePiece
+
+                // removing piece from previouly active location
+                squareIdAndValueMap[activePiece.location] = {
+                    id: '',
+                    location: activePiece.location,
+                    type: '',
+                }
+                // updating piece location to current location 
+                squareIdAndValueMap[id].location = id
             }
-            // updating piece location to current location 
-            squareIdAndValueMap[id].location = id
 
             //removeing current active piece
             this.setState({ activePiece: '' })
